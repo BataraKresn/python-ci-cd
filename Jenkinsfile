@@ -18,7 +18,9 @@ pipeline {
         }
         
         stage ('Test'){
-                withPythonEnv('/usr/bin/python3.5')
+                 agent{
+                docker { image 'python:3' }
+                }
                 steps {
                 sh "pytest testRoutes.py"
                 }
