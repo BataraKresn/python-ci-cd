@@ -18,9 +18,6 @@ pipeline {
         }
         
         stage ('Test'){
-                 agent{
-                docker { image 'python:3' }
-                }
                 steps {
                 sh "pytest testRoutes.py"
                 }
